@@ -7,14 +7,14 @@ Description
 Quick start
 -----------
 
-1. Add "atol" to your INSTALLED_APPS setting like this::
+1. Add ``atol`` to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
         'atol',
     ]
 
-2. Add "atol" settings like this::
+2. Add ``atol`` settings like this::
 
     RECEIPTS_ATOL_LOGIN = 'login'
     RECEIPTS_ATOL_PASSWORD = 'secret'
@@ -25,15 +25,15 @@ Quick start
     RECEIPTS_ATOL_PAYMENT_ADDRESS = 'г. Москва, ул. Оранжевая, д.22 к.11'
     RECEIPTS_OFD_URL_TEMPLATE = u'https://lk.platformaofd.ru/web/noauth/cheque?fn={fn}&fp={fp}'
 
-3. Include the polls URLconf in your project urls.py like this::
+3. Include the ``atol`` URLconf in your project urls.py like this::
 
     from atol.views import ReceiptView
 
     url(r'^r/(?P<short_uuid>[\w]+)/$', ReceiptView.as_view(), name='receipt')
 
-4. Run `python manage.py migrate atol` to create the receipt model.
+4. Run ``python manage.py migrate atol`` to create the receipt model.
 
-5. Add `payment_accept` signal and `init_receipt` receiver::
+5. Add ``payment_accept`` signal and ``init_receipt`` receiver::
 
     payment_accepted = Signal(providing_args=['payment'])
 
@@ -56,4 +56,4 @@ Quick start
 Run tests
 ---------
 
-python setup.py test
+    python setup.py test
